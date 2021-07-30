@@ -19,8 +19,11 @@ export class AuthService {
   }
   cadastrar(user: User): Observable<User>{
     return this.http.post<User>('https://blogfmerim.herokuapp.com/usuarios/cadastrar', user)
-    
+      }
 
+      logado(){
+        let ok: boolean = false
 
-  }
+        return ok
+      }
 }
