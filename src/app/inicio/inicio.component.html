@@ -1,12 +1,12 @@
 <div class="container-fluid">
 
-  <div class="row bg-secondary d-flex align-items-center">
+  <div class="row bg-info d-flex align-items-center">
     <div class="col-md-6">
 
       <div class="row d-flex justify-content-center">
         <div class="col-md-6 text-white">
           <h1 class="fs-54">Seja bem vindo(a)!</h1>
-          <h5 class="fs-18">expresse aqui os seus pensamentos e opniões!</h5>
+          <h5 class="fs-18">expresse aqui os seus pensamentos e opiniões!</h5>
         </div>
       </div>
 
@@ -76,6 +76,9 @@
               {{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}
             </small></p>
 
+            <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+            <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+
           </div>
         </div>
       </div>
@@ -111,7 +114,7 @@
 
 
 
-<!-- Modal - . -->
+<!-- Modal --- . -->
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

@@ -27,5 +27,12 @@ export class PostagemService {
     return this.http.get<Postagem>(`https://blogfmerim.herokuapp.com/postagens/${id}`)
   }
 
+  putPostagem(postagem: Postagem): Observable<Postagem>{
+    return this.http.put<Postagem>('https://blogfmerim.herokuapp.com/postagens', postagem)
+  }
+
+  deletePostagem(id: number){
+    return this.http.delete(`https://blogfmerim.herokuapp.com/postagens/${id}`)
+  }
 
 }
