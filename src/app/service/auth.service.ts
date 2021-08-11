@@ -9,6 +9,9 @@ import { UserLogin } from '../model/UserLogin';
   providedIn: 'root'
 })
 export class AuthService {
+  atualizar(user: User) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(
     private http: HttpClient
@@ -26,6 +29,10 @@ export class AuthService {
     return this.http.get<User>(`https://blogfmerim.herokuapp.com/usuarios/${id}`)
       }
     
+      atualizarUsuario(usuario: User): Observable<User> {
+        return this.http.put<User>('https://blogfmerim.herokuapp.com/usuarios/alterar', usuario)
+      }
+
       logado(){
         let ok: boolean = false
 
