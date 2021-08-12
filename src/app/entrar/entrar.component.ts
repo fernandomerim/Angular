@@ -32,6 +32,7 @@ environment.token = this.userLogin.token
 environment.nome = this.userLogin.nome
 environment.foto = this.userLogin.foto
 environment.id = this.userLogin.id
+environment.tipo = this.userLogin.tipo
 
       this.router.navigate(['/inicio'])
     }, erro =>{
