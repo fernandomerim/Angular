@@ -16,23 +16,27 @@ export class TemaService {
   }
 
   getAllTema(): Observable<Tema[]>{
-    return this.http.get<Tema[]>('https://blogfmerim.herokuapp.com/temas', this.token)
+    return this.http.get<Tema[]>('https://blogfmerim.herokuapp.com/temas')
   }
 
   getByIdTema(id: number): Observable<Tema> {
-    return this.http.get<Tema>(`https://blogfmerim.herokuapp.com/temas/${id}`, this.token)
+    return this.http.get<Tema>(`https://blogfmerim.herokuapp.com/temas/${id}`)
+  }
+
+  getByDescricaoTema(descricao: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://blogfmerim.herokuapp.com/temas/descricao/${descricao}`)
   }
 
   postTema(tema: Tema): Observable<Tema>{
-    return this.http.post<Tema>('https://blogfmerim.herokuapp.com/temas', tema, this.token)
+    return this.http.post<Tema>('https://blogfmerim.herokuapp.com/temas', tema)
   }
 
  putTema(tema: Tema): Observable<Tema>{
-    return this.http.put<Tema>('https://blogfmerim.herokuapp.com/temas', tema, this.token)
+    return this.http.put<Tema>('https://blogfmerim.herokuapp.com/temas', tema)
   }
 
   deleteTema(id: number){
-    return this.http.delete(`https://blogfmerim.herokuapp.com/temas/${id}`, this.token)
+    return this.http.delete(`https://blogfmerim.herokuapp.com/temas/${id}`)
   }
 
 }
